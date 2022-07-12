@@ -51,11 +51,12 @@ public class NewConstruction : MonoBehaviour
 
     public string nombreObra;
 
-
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = Transform.FindObjectOfType<GameManager>().GetComponent<GameManager>();
         constructionAccepted = false;
         GameManager.constructions.Add(this);
 
@@ -93,7 +94,7 @@ public class NewConstruction : MonoBehaviour
 
                     //Activar elementos visuales 
 
-                    GameManager.AllConstructionsFinished();
+                   gameManager.AllConstructionsFinished();
                 }        
             }
         }

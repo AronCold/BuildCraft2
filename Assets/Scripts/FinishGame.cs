@@ -18,5 +18,19 @@ public class FinishGame : MonoBehaviour
     
     }
 
+    public void GanarJuego()
+    {
+
+    }
+
+    public void PerderJuegoBancarrota()
+    {
+
+    }
+
+    public void PerderJuegoPenalizaciones()
+    {
+        //MOSTRAR PANEL 
+    }
    
 }

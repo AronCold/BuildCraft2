@@ -33,12 +33,19 @@ public class GameManager : MonoBehaviour
     public static int ordenDeObras = 0;
 
     public static bool isFinished = false;
+
+    public static int contadorAlertas;
+
+    public ProgressBar penaltyProgress;
+
+    private FinishGame finalJuego;
+
     // Start is called before the first frame update
     void Start()
     {
         alertShowed = false;
 
-        dineroJugador = 100000;
+        dineroJugador = 200000;
 
         dineroJugadorTexto.text = dineroJugador.ToString();
 
@@ -58,6 +65,8 @@ public class GameManager : MonoBehaviour
 
         horaTexto.text = hora.ToString();
 
+        finalJuego = Transform.FindObjectOfType<FinishGame>().GetComponent<FinishGame>();
+
     }
 
     // Update is called once per frame
@@ -75,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static void AllConstructionsFinished()
+    public void AllConstructionsFinished()
     {
         foreach (NewConstruction construction in constructions)
         {
@@ -96,6 +105,21 @@ public class GameManager : MonoBehaviour
         {
             //JUEGO COMPLETADO
             Debug.Log("JUEGO COMPLETADO JESUUUUUUUS");
+
+            finalJuego.GanarJuego();
+        }
+    }
+
+    public void PenaltiesProgress()
+    {
+        penaltyProgress.current = contadorAlertas;
+
+        if (contadorAlertas >= 5)
+        {
+            Debug.Log("GAME OVER: PENALTIES");
+
+            finalJuego.PerderJuegoPenalizaciones();
+            
         }
     }
 }

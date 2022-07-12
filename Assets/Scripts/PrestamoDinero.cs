@@ -43,6 +43,11 @@ public class PrestamoDinero : MonoBehaviour
                 timerEnded();
             }
         }
+
+        if(GameManager.dineroJugador<=0 && haAceptadoPrestamo)
+        {
+
+        }
     }
 
     private void timerEnded()

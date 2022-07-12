@@ -22,6 +22,8 @@ public class ButtonBuy : MonoBehaviour
 
     private Button button;
 
+   
+
     
 
     // Start is called before the first frame update
@@ -33,7 +35,7 @@ public class ButtonBuy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void buttonClick()

@@ -18,6 +18,12 @@ public class ButtonAlert : MonoBehaviour
 
     public Text nombreObraAlerta;
 
+    private float tiempoAlertas;
+
+    private const float duracionAlerta = 12f;
+
+    private GameManager comprobarFinal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +36,24 @@ public class ButtonAlert : MonoBehaviour
 
         confirmButton.colors = colors;
 
+        comprobarFinal = Transform.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        tiempoAlertas += Time.deltaTime;
+
+        if (tiempoAlertas >= duracionAlerta)
+        {
+            GameManager.contadorAlertas++;
+            tiempoAlertas = 0;
+
+            resetValues();
+
+            comprobarFinal.PenaltiesProgress();
+        }
     }
 
     public void ButtonClick()
