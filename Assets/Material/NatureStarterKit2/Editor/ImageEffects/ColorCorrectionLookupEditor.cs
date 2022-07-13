@@ -15,8 +15,9 @@ namespace UnityStandardAssets.ImageEffects
 
         private Texture2D tempClutTex2D;
 
-
-        public override void OnInspectorGUI () {
+        [Obsolete]
+        public override void OnInspectorGUI()
+        {
             serObj.Update ();
 
             EditorGUILayout.LabelField("Converts textures into color lookup volumes (for grading)", EditorStyles.miniLabel);
