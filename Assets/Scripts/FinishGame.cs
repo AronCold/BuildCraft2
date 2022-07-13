@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class FinishGame : MonoBehaviour
 {
-    
+    public GameObject panelGanar;
+
+    public GameObject panelPerderBancarrota;
+
+    public GameObject panelPerderPenalizaciones;
 
     // Start is called before the first frame update
     void Start()
@@ -20,17 +24,17 @@ public class FinishGame : MonoBehaviour
 
     public void GanarJuego()
     {
-
+        panelGanar.SetActive(true);
     }
 
     public void PerderJuegoBancarrota()
     {
-
+        panelPerderBancarrota.SetActive(true);
     }
 
     public void PerderJuegoPenalizaciones()
     {
-        //MOSTRAR PANEL 
+        panelPerderPenalizaciones.SetActive(true);
     }
    
 }

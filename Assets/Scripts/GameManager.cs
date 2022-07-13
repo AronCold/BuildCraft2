@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
 
     public ProgressBar penaltyProgress;
 
+    public static int contadorConstruccionesAcabadas = 0;
+
+    public ProgressBar constructionProgress;
+
     private FinishGame finalJuego;
 
     // Start is called before the first frame update
@@ -67,6 +71,8 @@ public class GameManager : MonoBehaviour
 
         finalJuego = Transform.FindObjectOfType<FinishGame>().GetComponent<FinishGame>();
 
+        //constructionProgress.current = 0;
+
     }
 
     // Update is called once per frame
@@ -82,6 +88,8 @@ public class GameManager : MonoBehaviour
 
         horaTexto.text = hora.ToString();
 
+        constructionProgress.current = contadorConstruccionesAcabadas;
+
     }
 
     public void AllConstructionsFinished()
@@ -91,6 +99,9 @@ public class GameManager : MonoBehaviour
             if (construction.constructionComplete)
             {
                 isFinished = true;
+
+                Debug.Log("Si cuenta la obra finalizada");
+
             }
 
             else
@@ -101,7 +112,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (isFinished == true)
+        if (isFinished == true && contadorConstruccionesAcabadas >= 4)
         {
             //JUEGO COMPLETADO
             Debug.Log("JUEGO COMPLETADO JESUUUUUUUS");

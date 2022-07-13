@@ -95,14 +95,17 @@ public class NewConstruction : MonoBehaviour
                 {
                     constructionComplete = true;
 
+
+                    GameManager.contadorConstruccionesAcabadas++;
+
                     //Activar elementos visuales 
 
-                   gameManager.AllConstructionsFinished();
+                    gameManager.AllConstructionsFinished();
                 }        
             }
         }
 
-        else if (constructionAccepted && alerted == true)
+        else if (constructionAccepted && alerted == true) //////////////////////////
         {
             showAlert();
 
