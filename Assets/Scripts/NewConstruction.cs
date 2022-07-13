@@ -23,6 +23,7 @@ public class NewConstruction : MonoBehaviour
 
     public List<Text> textosObras = new List<Text>();
 
+
     public int valorProyecto;
 
     public int presupuestoGasto;
@@ -52,6 +53,8 @@ public class NewConstruction : MonoBehaviour
     public string nombreObra;
 
     private GameManager gameManager;
+
+    public GameObject ButtonAlert;
 
     // Start is called before the first frame update
     void Start()
@@ -137,7 +140,11 @@ public class NewConstruction : MonoBehaviour
         if (tiempoError <= duracionProyecto)
         {
             alerted = true;
+            
             tiempoError += tiempoErrorAux;
+
+            ButtonAlert.SetActive(true);
+          
         }
 
         else
@@ -152,6 +159,8 @@ public class NewConstruction : MonoBehaviour
         alerted = false;
 
         isShowingAlertPanel = false;
+
+        ButtonAlert.SetActive(false);
 
         foreach(GameObject panel in panelesAlerta)
         {
@@ -187,6 +196,8 @@ public class NewConstruction : MonoBehaviour
         visualConstructions[ordenDeObra - 1].maximum = duracionProyecto;
 
         textosObras[ordenDeObra - 1].text = nombreObra;
+
+        
 
         GameManager.ordenDeObras = ordenDeObra;
 

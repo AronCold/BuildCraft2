@@ -22,6 +22,8 @@ public class ButtonAlert : MonoBehaviour
 
     private const float duracionAlerta = 12f;
 
+    public ProgressBar barraAlerta;
+
     private GameManager comprobarFinal;
 
     // Start is called before the first frame update
@@ -54,6 +56,11 @@ public class ButtonAlert : MonoBehaviour
 
             comprobarFinal.PenaltiesProgress();
         }
+
+        else
+        {
+            barraAlerta.current = (int)tiempoAlertas;
+        }
     }
 
     public void ButtonClick()
@@ -81,6 +88,8 @@ public class ButtonAlert : MonoBehaviour
         constructionRef.FixedAlert();
 
         GameManager.alertShowed = false;
+
+        
 
         resetValues();
     }
