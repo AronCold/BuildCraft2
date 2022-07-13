@@ -64,6 +64,10 @@ public class NewConstruction : MonoBehaviour
 
     public Selected seleccion;
 
+    public GameObject panelNotificacionNormal;
+
+    public GameObject panelNotificacionAlerta;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +89,9 @@ public class NewConstruction : MonoBehaviour
     {
         if (constructionAccepted&&alerted==false&&GameManager.alertShowed==false)
         {
+            panelNotificacionAlerta.SetActive(false);
+            panelNotificacionNormal.SetActive(true);
+
             if (progressBar.current < progressBar.maximum)
             {
                 timeProgress += Time.deltaTime / 3;
@@ -120,6 +127,10 @@ public class NewConstruction : MonoBehaviour
 
         else if (constructionAccepted && alerted == true) //////////////////////////
         {
+            panelNotificacionNormal.SetActive(false);
+            panelNotificacionAlerta.SetActive(true);
+
+
             showAlert();
 
         }
