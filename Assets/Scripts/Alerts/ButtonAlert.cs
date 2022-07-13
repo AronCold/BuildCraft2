@@ -80,7 +80,7 @@ public class ButtonAlert : MonoBehaviour
 
         GameManager.dineroJugador -= cantidadAdicional;
 
-        botonCerrar.interactable = false;
+        //botonCerrar.interactable = false;
     }
 
     public void ButtonClickConfirm()
@@ -113,7 +113,7 @@ public class ButtonAlert : MonoBehaviour
 
         confirmButton.colors = colors;
 
-        botonCerrar.interactable = true;
+        //botonCerrar.interactable = true;
     }
 
     public void SetConstruction(NewConstruction newConstruction)
