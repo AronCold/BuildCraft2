@@ -56,6 +56,14 @@ public class NewConstruction : MonoBehaviour
 
     public GameObject ButtonAlert;
 
+    //public GameObject modeloAMedias;
+
+    public GameObject modeloConstruccionAcabada;
+
+    //public GameObject objetoSeleccion;
+
+    public Selected seleccion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +76,8 @@ public class NewConstruction : MonoBehaviour
         tiempoAux = duracionProyecto / (cuotas - 1);
 
         progressBar.maximum = duracionProyecto;
+
+        modeloConstruccionAcabada.SetActive(false);
     }
 
     // Update is called once per frame
@@ -95,6 +105,9 @@ public class NewConstruction : MonoBehaviour
                 {
                     constructionComplete = true;
 
+                    modeloConstruccionAcabada.SetActive(true);
+
+                    seleccion.objeto.SetActive(false);
 
                     GameManager.contadorConstruccionesAcabadas++;
 

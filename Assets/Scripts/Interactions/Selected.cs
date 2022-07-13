@@ -19,6 +19,8 @@ public class Selected : MonoBehaviour
 
     public GameObject ventanaEmergente;
 
+    public NewConstruction construccion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,14 +59,14 @@ public class Selected : MonoBehaviour
 
     private void OnMouseOver()
     {
-        transform.GetComponent<MeshRenderer>().material.color = new Color(0,1,0,0.4f);
+        
 
     }
 
     private void OnMouseExit()
     {
-        transform.GetComponent<MeshRenderer>().material.color = color;
-        //transform.GetComponent<MeshRenderer>().material.mainTexture = textura;
+        
     }
 
+    
 }
